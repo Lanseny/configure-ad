@@ -19,16 +19,18 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Step 1: Set Up Your Azure Environment
+- Step 2: Install Active Directory Domain Services (AD DS)
+- Step 3: Configure DNS and Networking
+- Step 4: Join Additional VMs to the Domain (Optional)
+- Step 5: Configure Group Policies and Organizational Units (OUs)
+- Step 6: Verify and Test
 
 <h2>Deployment and Configuration Steps</h2>
 
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-### Step 1: Set Up Your Azure Environment
+  <h2>Step 1: Set Up Your Azure Environment</h2>
 
 1. **Log in to the Azure Portal:**
    - Navigate to [Azure Portal](https://portal.azure.com) and log in with your credentials.
@@ -54,7 +56,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
    - Click **Review + Create**.
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-### Step 2: Install Active Directory Domain Services (AD DS)
+<h2> Step 2: Install Active Directory Domain Services (AD DS)</h2>
 
 1. **Connect to the VM:**
    - Use Remote Desktop Protocol (RDP) to connect to the VM with the administrator credentials.
@@ -74,7 +76,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
    - The VM will restart after configuration.
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-### Step 3: Configure DNS and Networking
+<h2> Step 3: Configure DNS and Networking</h2>
 
 1. **Update DNS Settings:**
    - Go to **Azure Portal** > **Virtual Machines** > your VM > **Networking** > **NIC (Network Interface)**.
@@ -85,7 +87,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
    - Add rules to allow traffic on ports required by Active Directory (e.g., 53 for DNS, 88 for Kerberos, 389 for LDAP, 636 for LDAPS, 3268 for Global Catalog).
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-### Step 4: Join Additional VMs to the Domain (Optional)
+<h2>Step 4: Join Additional VMs to the Domain (Optional)</h2>
 
 1. **Create Additional VMs:**
    - Follow the same steps as Step 1 to create more VMs within the same virtual network and subnet.
@@ -98,7 +100,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
    - Restart the VMs after joining the domain.
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-### Step 5: Configure Group Policies and Organizational Units (OUs)
+<h2>Step 5: Configure Group Policies and Organizational Units (OUs)</h2>
 
 1. **Open Group Policy Management:**
    - On the domain controller, open **Server Manager** > **Tools** > **Group Policy Management**.
@@ -113,7 +115,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
    - Configure the GPO settings as needed (e.g., security settings, software deployment).
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-### Step 6: Verify and Test
+<h2>Step 6: Verify and Test</h2>
 
 1. **Verify Domain Controller Functionality:**
    - Ensure the domain controller is running properly by opening **Active Directory Users and Computers** and checking the domain structure.
@@ -124,6 +126,6 @@ This tutorial outlines the implementation of on-premises Active Directory within
 3. **Check Group Policy Application:**
    - On a domain-joined VM, run `gpresult /r` to check the applied group policies.
 
-### Conclusion
+<h2>Conclusion<h2>
 
 By following these steps, you have successfully configured an on-premises Active Directory environment within Azure Virtual Machines. This setup allows for centralized management of users, groups, and resources, leveraging the scalability and flexibility of Azure. This guide serves as a comprehensive demonstration of your ability to manage Active Directory services in a cloud environment, suitable for inclusion in your professional portfolio.
